@@ -4,20 +4,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Deep & Disha | Wedding Reception</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Noto+Serif+Bengali:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
   --wine: #591b2b;
-  --wine2: #32101c;
+  --wine-dark: #32101c;
   --gold: #b58b4b;
   --cream: #f8f0e4;
   --ink: #3c2525;
 }
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -26,283 +32,398 @@ html {
 }
 
 body {
-  margin: 0;
   background: var(--cream);
   color: var(--ink);
   font-family: 'Cormorant Garamond', serif;
-}
-
-.hero {
-  min-height: 100vh;
-  background: linear-gradient(#260d18aa, #260d18bb),
-    radial-gradient(circle at center, #8c3d4b, #32101c 75%);
-  color: #fff3df;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: center;
-  padding: 45px 20px;
-  position: relative;
 }
 
-.hero:before,
-.hero:after {
-  content: "❧";
-  position: absolute;
-  color: #d1ad70;
-  font-size: 70px;
-  opacity: .8;
+section {
+  padding: 75px 20px;
 }
 
-.hero:before {
-  top: 25px;
-  left: 25px;
-}
-
-.hero:after {
-  bottom: 25px;
-  right: 25px;
-  transform: rotate(180deg);
-}
-
-.frame {
-  border: 1px solid #c8a56c;
-  padding: 45px 24px;
-  max-width: 760px;
-  width: 100%;
-  outline: 1px solid #c8a56c;
-  outline-offset: 7px;
+.ornament {
+  color: var(--gold);
+  font-size: 27px;
+  margin: 15px 0;
+  letter-spacing: 8px;
 }
 
 .eyebrow {
+  color: var(--gold);
+  font-size: 17px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: #e4c58e;
-  font-size: 15px;
 }
 
-h1 {
+h1, h2, h3 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(48px, 9vw, 88px);
   font-weight: 500;
-  margin: 22px 0 8px;
 }
 
-.amp {
-  color: #d9b675;
-  font-style: italic;
+h2 {
+  color: var(--wine);
+  font-size: clamp(32px, 5vw, 45px);
+  margin-bottom: 18px;
 }
 
 .bengali {
   font-family: 'Noto Serif Bengali', serif;
 }
 
+/* HERO */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 55px 20px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at center, rgba(255,255,255,.08), transparent 55%),
+    linear-gradient(145deg, #32101c, #70283b, #32101c);
+  color: var(--cream);
+}
+
+.hero::before,
+.hero::after {
+  content: "❧";
+  position: absolute;
+  color: rgba(210,174,111,.35);
+  font-size: 150px;
+}
+
+.hero::before {
+  top: 20px;
+  left: 15px;
+}
+
+.hero::after {
+  bottom: 20px;
+  right: 15px;
+  transform: rotate(180deg);
+}
+
+.hero-inner {
+  max-width: 850px;
+  width: 100%;
+  border: 1px solid var(--gold);
+  outline: 1px solid rgba(181,139,75,.4);
+  outline-offset: 9px;
+  padding: 65px 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero .eyebrow {
+  color: #e2c18c;
+}
+
+.hero h1 {
+  font-size: clamp(55px, 10vw, 95px);
+  line-height: 1.15;
+  margin: 25px 0;
+  color: #f8e9cc;
+}
+
+.hero .ampersand {
+  color: var(--gold);
+  font-style: italic;
+  font-size: .7em;
+}
+
 .hero .bengali {
-  font-size: 23px;
-  color: #efd9b2;
+  color: #f0d7ac;
+  font-size: 22px;
+  margin-top: 15px;
 }
 
-.hero p {
-  font-size: 21px;
-  line-height: 1.5;
-}
-
-.goldline {
-  width: 100px;
-  height: 1px;
-  background: var(--gold);
-  margin: 25px auto;
-}
-
-section {
-  padding: 75px 20px;
-  text-align: center;
-}
-
-h2 {
-  font-family: 'Playfair Display', serif;
-  color: var(--wine);
-  font-size: 38px;
-  font-weight: 500;
-  margin: 0 0 20px;
-}
-
-.sub {
+.hero-message {
   font-size: 21px;
   line-height: 1.6;
+  color: #f2e4d2;
+}
+
+.hero-date {
+  color: #e4c38c;
+  font-size: 24px;
+  letter-spacing: 3px;
+  margin-top: 35px;
+}
+
+/* COMMON */
+
+.gold-line {
+  width: 85px;
+  height: 1px;
+  background: var(--gold);
+  margin: 22px auto;
+}
+
+.description {
   max-width: 700px;
   margin: 0 auto;
+  font-size: 21px;
+  line-height: 1.7;
 }
 
-.details {
-  background: #efe2d0;
+.family-section {
+  background: #fffaf2;
 }
 
-.detailgrid {
+.families {
+  max-width: 850px;
+  margin: 45px auto 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  max-width: 900px;
-  margin: 40px auto 0;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
 }
 
-.detail {
-  padding: 25px;
-  border: 1px solid #c8a56c;
-  background: #fff9f0;
+.family-card {
+  padding: 30px 20px;
+  border: 1px solid #d7bd91;
+  background: #fffdf9;
 }
 
-.detail h3 {
+.family-card h3 {
   color: var(--wine);
-  font-size: 23px;
-  margin: 0 0 10px;
+  font-size: 27px;
+  margin-bottom: 15px;
 }
 
-.detail p {
-  font-size: 20px;
-  margin: 5px;
+.family-card p {
+  font-size: 21px;
+  line-height: 1.8;
 }
 
-a.link {
-  display: inline-block;
-  color: #fff3df;
+/* EVENT */
+
+.event-section {
   background: var(--wine);
+  color: var(--cream);
+}
+
+.event-section h2 {
+  color: #f5dfb8;
+}
+
+.event-card {
+  max-width: 650px;
+  margin: 35px auto 0;
+  padding: 40px 25px;
+  border: 1px solid var(--gold);
+  background: rgba(255,255,255,.04);
+}
+
+.event-card .event-date {
+  color: #e5c48d;
+  font-size: 36px;
+  margin: 15px 0;
+}
+
+.event-card p {
+  font-size: 22px;
+  line-height: 1.8;
+}
+
+.map-link {
+  display: inline-block;
+  margin-top: 25px;
   padding: 12px 25px;
+  border: 1px solid var(--gold);
+  color: #f5dfb8;
   text-decoration: none;
-  margin: 12px 5px;
-  font-size: 18px;
+  font-size: 19px;
+  transition: .3s;
 }
 
-a.link:hover {
-  background: var(--wine2);
+.map-link:hover {
+  background: var(--gold);
+  color: var(--wine-dark);
 }
 
-/* PHOTO GALLERY */
+/* COUNTDOWN */
+
+.countdown-section {
+  background: #fffaf2;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 35px;
+}
+
+.count-box {
+  min-width: 100px;
+  padding: 20px 15px;
+  background: var(--wine);
+  color: white;
+  border: 1px solid var(--gold);
+}
+
+.count-box span {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  color: #f2d5a3;
+}
+
+.count-box small {
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* GALLERY */
+
+.gallery-section {
+  background: var(--cream);
+}
 
 .gallery {
+  max-width: 1050px;
+  margin: 35px auto 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-  max-width: 1100px;
-  margin: 35px auto;
-  align-items: stretch;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
 }
 
 .gallery img {
-  display: block;
   width: 100%;
   height: 380px;
   object-fit: cover;
-  object-position: center;
   border: 8px solid white;
   box-shadow: 0 4px 18px #4b2a2418;
-  background: #eadbc6;
+  transition: transform .4s ease;
 }
 
-/* PRE-WEDDING VIDEO */
-
-.film {
-  max-width: 850px;
-  margin: 30px auto;
-  padding: 35px 20px;
-  background: #eadbc6;
-  border: 1px solid #c8a56c;
-  font-size: 20px;
+.gallery img:hover {
+  transform: scale(1.02);
 }
 
-.video-placeholder {
-  padding: 45px 15px;
+/* VIDEO */
+
+.video-section {
+  background: #fffaf2;
 }
 
 .video-container {
-  position: relative;
   width: 100%;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
+  max-width: 850px;
+  margin: 35px auto 0;
+  aspect-ratio: 16 / 9;
+  border: 8px solid white;
+  outline: 1px solid #d7bd91;
+  box-shadow: 0 8px 25px rgba(60,37,37,.15);
+  background: #1c1014;
 }
 
 .video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: block;
   width: 100%;
   height: 100%;
   border: 0;
 }
 
-.count {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin: 30px auto;
-}
-
-.count div {
-  background: var(--wine);
-  color: #fff1dc;
-  padding: 15px;
-  min-width: 75px;
-}
-
-.count strong {
-  display: block;
-  font-size: 30px;
-}
+/* FOOTER */
 
 footer {
-  background: var(--wine2);
-  color: #f6e8d2;
-  padding: 45px 20px;
-  text-align: center;
-  font-size: 22px;
+  background: var(--wine-dark);
+  color: var(--cream);
+  padding: 65px 20px;
 }
 
-footer .bengali {
-  font-size: 20px;
+footer h2 {
+  color: #f2d5a3;
+  font-size: 38px;
+  margin: 20px 0;
 }
 
-.music {
+footer p {
+  font-size: 21px;
+  line-height: 1.8;
+}
+
+.footer-names {
+  font-family: 'Playfair Display', serif;
+  color: #e4c38c;
+  font-size: 32px;
+  margin: 20px 0;
+}
+
+/* MUSIC BUTTON */
+
+.music-button {
   position: fixed;
-  bottom: 18px;
   right: 18px;
-  background: var(--gold);
-  color: #28131a;
-  border: 0;
+  bottom: 18px;
+  z-index: 10;
+  background: var(--wine);
+  color: white;
+  border: 1px solid var(--gold);
+  padding: 13px 18px;
   border-radius: 30px;
-  padding: 12px 17px;
-  cursor: pointer;
-  z-index: 5;
-  font-family: inherit;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(0,0,0,.2);
 }
 
-.music:hover {
-  background: #d0a767;
+.music-button:hover {
+  background: var(--wine-dark);
 }
 
-@media (max-width: 600px) {
+/* RESPONSIVE */
+
+@media (max-width: 650px) {
   section {
     padding: 55px 17px;
   }
 
-  .frame {
-    padding: 38px 14px;
+  .hero-inner {
+    padding: 50px 15px;
+  }
+
+  .hero::before,
+  .hero::after {
+    font-size: 80px;
+  }
+
+  .families {
+    grid-template-columns: 1fr;
   }
 
   .gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .gallery img {
-    height: 260px;
-    border-width: 5px;
+    height: 330px;
   }
 
-  h2 {
-    font-size: 31px;
+  .count-box {
+    min-width: 75px;
+    padding: 15px 10px;
+  }
+
+  .count-box span {
+    font-size: 29px;
+  }
+
+  .event-card .event-date {
+    font-size: 29px;
+  }
+
+  .music-button {
+    right: 12px;
+    bottom: 12px;
+    font-size: 15px;
   }
 }
 </style>
@@ -310,189 +431,224 @@ footer .bengali {
 
 <body>
 
-<!-- OPENING INVITATION -->
+<!-- HERO -->
 
-<header class="hero">
-  <div class="frame">
+<section class="hero">
+  <div class="hero-inner">
 
-    <div class="eyebrow">
-      With the blessings of our parents
-    </div>
+    <p class="eyebrow">With the blessings of our parents</p>
 
-    <div class="goldline"></div>
+    <div class="ornament">❧ ❦ ❧</div>
 
-    <div class="bengali">
-      শুভ বিবাহ • শুভ পরিণয়
-    </div>
+    <p class="bengali">শুভ পরিণয়</p>
 
     <h1>
-      Deep <span class="amp">&</span> Disha
+      Deep <span class="ampersand">&</span> Disha
     </h1>
 
-    <div class="goldline"></div>
-
-    <p>
-      Two hearts, one beautiful journey.<br>
-      We request the pleasure of your company<br>
-      as we celebrate our wedding reception.
+    <p class="hero-message">
+      Two hearts, two families and one beautiful journey.
+      <br>
+      We invite you to celebrate the beginning of our forever.
     </p>
 
-    <div class="bengali">
-      আপনাদের সাদর আমন্ত্রণ
-    </div>
+    <div class="ornament">✦ ✧ ✦</div>
 
-    <p>31 January 2027 · 7:30 PM onwards</p>
+    <p class="hero-date">31 JANUARY 2027</p>
 
-  </div>
-</header>
-
-
-<!-- FAMILY DETAILS -->
-
-<section>
-  <h2>Our Families</h2>
-
-  <div class="detailgrid">
-
-    <div class="detail">
-      <h3>Groom's Parents</h3>
-      <p>Ashim Sarkar</p>
-      <p>Alpana Sarkar</p>
-    </div>
-
-    <div class="detail">
-      <h3>Bride's Parents</h3>
-      <p>Debashis Ghosh</p>
-      <p>Jhuma Ghosh</p>
-    </div>
+    <p class="bengali">আপনাদের সাদর আমন্ত্রণ</p>
 
   </div>
 </section>
 
 
-<!-- RECEPTION DETAILS -->
+<!-- FAMILIES -->
 
-<section class="details">
+<section class="family-section">
 
-  <h2>The Celebration</h2>
+  <p class="eyebrow">Together with our families</p>
 
-  <p class="sub">
-    A joyous evening of love, laughter and togetherness.
-    Your presence will make our celebration truly special.
+  <h2>Our Families</h2>
+
+  <div class="gold-line"></div>
+
+  <p class="description">
+    With the love and blessings of our beloved parents,
+    we begin this beautiful new chapter of our lives.
   </p>
 
-  <div class="detailgrid">
+  <div class="families">
 
-    <div class="detail">
-      <h3>Date</h3>
-      <p>Sunday, 31 January 2027</p>
+    <div class="family-card">
+      <h3>Groom's Family</h3>
+      <p>
+        <strong>Deep Sarkar</strong>
+        <br>
+        Son of
+        <br>
+        Ashim Sarkar
+        <br>
+        & Alpana Sarkar
+      </p>
     </div>
 
-    <div class="detail">
-      <h3>Time</h3>
-      <p>7:30 PM onwards</p>
-    </div>
-
-    <div class="detail">
-      <h3>Venue</h3>
-      <p>Baba Panchananda Banquet</p>
-      <p>Domjur, Howrah, West Bengal</p>
+    <div class="family-card">
+      <h3>Bride's Family</h3>
+      <p>
+        <strong>Disha Ghosh</strong>
+        <br>
+        Daughter of
+        <br>
+        Debashis Ghosh
+        <br>
+        & Jhuma Ghosh
+      </p>
     </div>
 
   </div>
 
-  <a class="link"
-     href="https://maps.app.goo.gl/Ejjexi5v8hWK9iVt6"
-     target="_blank"
-     rel="noopener">
-     Get Directions ↗
-  </a>
+</section>
+
+
+<!-- RECEPTION DETAILS -->
+
+<section class="event-section">
+
+  <p class="eyebrow">The celebration</p>
+
+  <h2>Wedding Reception</h2>
+
+  <div class="ornament">❧ ✦ ❧</div>
+
+  <div class="event-card">
+
+    <p class="event-date">31st January 2027</p>
+
+    <div class="gold-line"></div>
+
+    <p>
+      Sunday
+      <br>
+      7:30 PM onwards
+    </p>
+
+    <div class="gold-line"></div>
+
+    <p>
+      <strong>Baba Panchananda Banquet</strong>
+      <br>
+      Domjur, Howrah
+      <br>
+      West Bengal
+    </p>
+
+    <a
+      class="map-link"
+      href="https://maps.app.goo.gl/Ejjexi5v8hWK9iVt6"
+      target="_blank"
+      rel="noopener">
+      View Venue on Google Maps ↗
+    </a>
+
+  </div>
 
 </section>
 
 
 <!-- COUNTDOWN -->
 
-<section>
+<section class="countdown-section">
+
+  <p class="eyebrow">The countdown begins</p>
 
   <h2>Save the Date</h2>
 
-  <div class="count">
+  <div class="gold-line"></div>
 
-    <div>
-      <strong id="days">--</strong>
-      Days
+  <p class="description">
+    We cannot wait to celebrate this special day with you.
+  </p>
+
+  <div class="countdown">
+
+    <div class="count-box">
+      <span id="days">00</span>
+      <small>Days</small>
     </div>
 
-    <div>
-      <strong id="hours">--</strong>
-      Hours
+    <div class="count-box">
+      <span id="hours">00</span>
+      <small>Hours</small>
     </div>
 
-    <div>
-      <strong id="minutes">--</strong>
-      Minutes
+    <div class="count-box">
+      <span id="minutes">00</span>
+      <small>Minutes</small>
     </div>
 
-    <div>
-      <strong id="seconds">--</strong>
-      Seconds
+    <div class="count-box">
+      <span id="seconds">00</span>
+      <small>Seconds</small>
     </div>
 
   </div>
-
-  <a class="link"
-     href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Deep%20%26%20Disha%20Wedding%20Reception&dates=20270131T140000Z/20270131T170000Z&location=Baba%20Panchananda%20Banquet%2C%20Domjur%2C%20Howrah"
-     target="_blank"
-     rel="noopener">
-     Add to Calendar
-  </a>
 
 </section>
 
 
 <!-- PHOTO GALLERY -->
 
-<section class="details">
+<section class="gallery-section">
+
+  <p class="eyebrow">A glimpse of our journey</p>
 
   <h2>Our Moments</h2>
 
-  <p class="sub">
-    A few memories from our journey together.
+  <div class="gold-line"></div>
+
+  <p class="description">
+    A few memories, a thousand emotions, and a lifetime to go.
   </p>
 
   <div class="gallery">
 
-    <img src="photo1.jpeg" alt="Deep and Disha - Photo 1">
+    <img src="photo1.jpeg" alt="Deep and Disha - Memory 1">
 
-    <img src="photo2.jpeg" alt="Deep and Disha - Photo 2">
+    <img src="photo2.jpeg" alt="Deep and Disha - Memory 2">
 
-    <img src="photo3.jpeg" alt="Deep and Disha - Photo 3">
+    <img src="photo3.jpeg" alt="Deep and Disha - Memory 3">
 
-    <img src="photo4.jpeg" alt="Deep and Disha - Photo 4">
+    <img src="photo4.jpeg" alt="Deep and Disha - Memory 4">
 
   </div>
 
 </section>
 
 
-<!-- PRE-WEDDING FILM -->
+<!-- PRE-WEDDING VIDEO -->
 
-<section>
+<section class="video-section">
+
+  <p class="eyebrow">Our story in motion</p>
 
   <h2>Our Pre-Wedding Film</h2>
 
-  <div class="film">
+  <div class="gold-line"></div>
 
-    <div class="video-placeholder">
-      Your pre-wedding film will appear here.
+  <p class="description">
+    Every love story has its own magic.
+    Here's a little glimpse of ours.
+  </p>
 
-      <br><br>
+  <div class="video-container">
 
-      <small>
-        The video will be added shortly.
-      </small>
-    </div>
+    <iframe
+      src="https://www.youtube.com/embed/6ILUTWnOofk"
+      title="Deep and Disha Pre-Wedding Film"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
 
   </div>
 
@@ -503,88 +659,108 @@ footer .bengali {
 
 <footer>
 
-  <div class="bengali">
-    ভালোবাসা ও আশীর্বাদে
-  </div>
+  <div class="ornament">❧ ❦ ❧</div>
 
-  <p>
-    We look forward to celebrating with you.
+  <p class="eyebrow">With love and happiness</p>
+
+  <h2>Deep & Disha</h2>
+
+  <p class="footer-names">
+    Together Forever
   </p>
 
-  <div class="goldline"></div>
+  <div class="gold-line"></div>
 
-  <strong>Deep & Disha</strong>
+  <p>
+    We request the pleasure of your company
+    <br>
+    as we celebrate this special occasion.
+  </p>
+
+  <p class="bengali" style="margin-top:25px;">
+    আপনাদের উপস্থিতি আমাদের আনন্দকে পূর্ণতা দেবে।
+  </p>
+
+  <div class="ornament">✦ ✧ ✦</div>
+
+  <p style="font-size:16px; color:#d9bd91;">
+    With love, Deep & Disha
+  </p>
 
 </footer>
 
 
 <!-- BACKGROUND MUSIC -->
 
-<audio id="bgmusic" loop preload="none">
+<audio id="backgroundMusic" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<button class="music" onclick="toggleMusic()" id="musicButton">
+<button
+  class="music-button"
+  id="musicButton"
+  onclick="toggleMusic()">
   ♫ Play Music
 </button>
 
 
-<!-- COUNTDOWN AND MUSIC SCRIPT -->
+<!-- JAVASCRIPT -->
 
 <script>
 
-const target = new Date(
-  '2027-01-31T19:30:00+05:30'
-).getTime();
+// Wedding countdown
+const weddingDate = new Date("2027-01-31T19:30:00+05:30").getTime();
 
-function tick() {
+function updateCountdown() {
 
-  let d = Math.max(0, target - Date.now());
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
 
-  document.getElementById('days').textContent =
-    Math.floor(d / 86400000);
+  if (distance <= 0) {
+    document.getElementById("days").textContent = "00";
+    document.getElementById("hours").textContent = "00";
+    document.getElementById("minutes").textContent = "00";
+    document.getElementById("seconds").textContent = "00";
+    return;
+  }
 
-  document.getElementById('hours').textContent =
-    Math.floor((d % 86400000) / 3600000);
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((distance / (1000 * 60)) % 60);
+  const seconds = Math.floor((distance / 1000) % 60);
 
-  document.getElementById('minutes').textContent =
-    Math.floor((d % 3600000) / 60000);
-
-  document.getElementById('seconds').textContent =
-    Math.floor((d % 60000) / 1000);
-
+  document.getElementById("days").textContent = days;
+  document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+  document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+  document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
 }
 
-tick();
-setInterval(tick, 1000);
+updateCountdown();
+setInterval(updateCountdown, 1000);
 
 
-const music = document.getElementById('bgmusic');
-const musicButton = document.getElementById('musicButton');
+// Background music play/pause
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicButton");
 
 async function toggleMusic() {
 
   if (music.paused) {
 
     try {
-
       await music.play();
-      musicButton.textContent = '♫ Pause Music';
-
+      musicButton.textContent = "♫ Pause Music";
     } catch (error) {
-
-      musicButton.textContent = '♫ Music unavailable';
-      console.error('Music could not be played:', error);
-
+      musicButton.textContent = "♫ Music unavailable";
+      console.error("Music could not be played:", error);
     }
 
   } else {
 
     music.pause();
-    musicButton.textContent = '♫ Play Music';
+    musicButton.textContent = "♫ Play Music";
 
   }
-
 }
 
 </script>
